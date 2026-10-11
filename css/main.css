@@ -177,6 +177,119 @@ header{
     font-size:30px;
 }
 
+/*carrusel*/
+.car{
+    position:relative;
+    padding:56px 0;
+}
+
+.car h2{
+    font-size:32px;
+    margin-bottom:24px;
+    color:var(--gold);
+}
+.car-box{
+    position:relative;
+}
+.car-track{
+    display:flex;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    scrollbar-width:none;
+    -webkit-overflow-scrolling:touch;
+    border:1px solid var(--gold);
+    border-radius:8px;
+}
+
+
+.car-track::-webkit-scrollbar{
+    display:none;
+}
+
+.car-slide{
+    flex:0 0 100%;
+    scroll-snap-align:center;
+    aspect-ratio:16/9;
+    margin:0;
+    position:relative;
+    background:linear-gradient(160deg,#2a2412,#0d0d0d 70%);
+    display:grid;
+    place-items:center;
+    color:var(--gold);
+}
+
+
+.car-slide img{
+    position:absolute;
+    inset:0;width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.car-btn{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    border:1px solid var(--gold);
+    background:#0A0A0Acc;
+    color:var(--gold);
+    font-size:22px;
+    line-height:1;
+    cursor:pointer;
+}
+
+
+
+.car-btn:hover{background:var(--gold);
+    color:var(--ink);
+}
+
+.car-btn:focus-visible,.car-dot:focus-visible{
+    outline:2px solid var(--gold2);
+    outline-offset:3px;
+}
+
+
+.car-prev{
+    left:12px;
+}
+
+.car-next{
+    right:12px;
+}
+.car-dots{
+    display:flex;;
+    justify-content:center;
+    gap:10px;;
+    margin-top:16px;
+}
+
+.car-dot{
+    width:10px;
+    height:10px;
+    padding:0;
+    border-radius:50%;
+    border:1px solid var(--gold);
+    background:transparent;
+    cursor:pointer;
+}
+.car-dot[
+    aria-current="true"]{background:var(--gold);
+    }
+
+
+
+    
+@media (max-width:720px){
+ .car-slide{aspect-ratio:4/3}
+ .car-btn{width:38px;height:38px}
+}
+
+
+
 
 footer{
     padding:24px 0;
