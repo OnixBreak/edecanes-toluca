@@ -1,46 +1,33 @@
+/*carrusel*/
 (function(){
- var box=document.querySelector('.car'); if(!box) return;
- var track=box.querySelector('.car-track');
- var slides=track.children, n=slides.length, idx=0, timer=null;
- var dots=box.querySelector('.car-dots');
+ var box=document.querySelector('.fade'); if(!box) return;
+ var slides=box.querySelectorAll('.fade-slide'), n=slides.length, idx=0, timer=null;
+ var dots=box.querySelector('.fade-dots');
  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
- var MS=5000; /* segundos entre fotos: 5000 = 5 s */
- 
+ var MS=5000; /* tiempo que se queda cada foto: 5000 = 5 segundos */
+
  for(var i=0;i<n;i++){
   (function(i){
    var d=document.createElement('button');
-   d.type='button'; d.className='car-dot'; d.setAttribute('aria-label','Ir a la foto '+(i+1));
-   d.addEventListener('click',function(){go(i)});
+   d.type='button'; d.className='fade-dot'; d.setAttribute('aria-label','Ver foto '+(i+1));
+   d.addEventListener('click',function(){show(i);play()});
    dots.appendChild(d);
   })(i);
  }
- 
- function paint(){
-  var ds=dots.children;
-  for(var i=0;i<ds.length;i++) ds[i].setAttribute('aria-current', i===idx);
- }
- function go(i){
+
+ function show(i){
+  slides[idx].classList.remove('on');
   idx=(i+n)%n;
-  track.scrollTo({left:idx*track.clientWidth, behavior:reduce?'auto':'smooth'});
-  paint();
+  slides[idx].classList.add('on');
+  var ds=dots.children;
+  for(var k=0;k<ds.length;k++) ds[k].setAttribute('aria-current',k===idx);
  }
- track.addEventListener('scroll',function(){
-  var i=Math.round(track.scrollLeft/track.clientWidth);
-  if(i!==idx){idx=i;paint();}
- },{passive:true});
- window.addEventListener('resize',function(){track.scrollLeft=idx*track.clientWidth});
- 
- box.querySelector('.car-prev').addEventListener('click',function(){go(idx-1)});
- box.querySelector('.car-next').addEventListener('click',function(){go(idx+1)});
- track.addEventListener('keydown',function(e){
-  if(e.key==='ArrowLeft'){go(idx-1)} else if(e.key==='ArrowRight'){go(idx+1)}
- });
- 
- /* Autoplay: se pausa al pasar el mouse, tocar o enfocar */
- function play(){ if(reduce||n<2) return; stop(); timer=setInterval(function(){go(idx+1)},MS); }
+ function play(){ stop(); if(reduce||n<2) return; timer=setInterval(function(){show(idx+1)},MS); }
  function stop(){ if(timer){clearInterval(timer);timer=null;} }
- ['mouseenter','focusin','touchstart'].forEach(function(ev){box.addEventListener(ev,stop,{passive:true})});
- ['mouseleave','focusout','touchend'].forEach(function(ev){box.addEventListener(ev,play,{passive:true})});
- 
- paint(); play();
+
+ /* No cambia de foto si la pestaña está en segundo plano */
+ document.addEventListener('visibilitychange',function(){ document.hidden?stop():play(); });
+
+ show(0); play();
 })();
+/*Aquí termina el código del carrusel*/
