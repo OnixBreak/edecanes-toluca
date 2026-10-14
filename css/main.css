@@ -30,7 +30,10 @@ h1,h2,h3{
 a{
     color:inherit;
 }
-.wrap{max-width:1040px;margin:0 auto;padding:0 20px;
+.wrap{
+    max-width:1040px;
+    margin:0 auto;
+    padding:0 20px;
 }
 
 /* Encabezado */
@@ -39,9 +42,8 @@ header{
     border-bottom:1px solid #D4AF3733;
 }
 
-.logo{
-    font:800 20px "Bricolage Grotesque",system-ui,sans-serif;
-    color:var(--gold);
+.logo-texto{
+    width: 30%;
 }
 
 /* Botones */
@@ -93,7 +95,7 @@ header{
 }
 .foto{
     width:100%;
-    aspect-ratio:4/5;
+    aspect-ratio:5/5;
     object-fit:fill;
     border:1px solid var(--gold);
     border-radius:8px;
@@ -304,7 +306,7 @@ header{
 
 .gal-grid{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(5,1fr);
     gap:14px;
 }
 
@@ -395,16 +397,33 @@ header{
 }
 
 /* Llamada final y pie*/
-.cta{padding:56px 0;display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}
-.cta h2{font-size:30px}
-footer{padding:24px 0;border-top:1px solid #D4AF3733;font-size:14px;color:var(--muted)}
+.cta{
+    padding:56px 0;
+    display:flex;
+    justify-content:space-between;
+    gap:20px;align-items:center;
+    flex-wrap:wrap
+}
+
+
+.cta h2{
+    font-size:30px
+}
+
+
+footer{
+    padding:24px 0;
+    border-top:1px solid #D4AF3733;
+    font-size:14px;
+    color:var(--muted);
+}
 
 /* ===== Adaptación a pantallas pequeñas ===== */
 @media (max-width:900px){
   .gal-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media (max-width:720px){
-  .hero,.btl-grid{grid-template-columns:1fr}
+  .hero,.btl-grid, .gal-grid{grid-template-columns:1fr;}
   .foto,.fade{aspect-ratio:4/3}
 }
 @media (prefers-reduced-motion:reduce){
@@ -412,3 +431,21 @@ footer{padding:24px 0;border-top:1px solid #D4AF3733;font-size:14px;color:var(--
 }
 
 /* Powered by OnixCorp */
+/*
+parallax fotos
+demostradoras foto de demostradora
+Edecanes
+
+ 
+promotoras X
+SERVICIOS EXTRAS
+  - skydancers
+  - carpa
+  - audio
+  - spot publicitario
+  - cabina 360
+
+tarjeta perifoneo
+
+partir logo y acomodarlo
+*/
