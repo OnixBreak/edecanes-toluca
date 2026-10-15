@@ -1,36 +1,10 @@
-/*fade*/
-/*fade*/
-(function(){
- var box=document.querySelector('.fade'); if(!box) return;
- var slides=box.querySelectorAll('.fade-slide'), n=slides.length, idx=0, timer=null;
- var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
- var MS=5000; /* tiempo que se queda cada foto 5 segundos */
-
- function show(i){
-  slides[idx].classList.remove('on');
-  idx=(i+n)%n;
-  slides[idx].classList.add('on');
- }
- function play(){ stop(); if(reduce||n<2) return; timer=setInterval(function(){show(idx+1)},MS); }
- function stop(){ if(timer){clearInterval(timer);timer=null;} }
-
- /* No cambia de foto si la pestaña está en segundo plano */
- document.addEventListener('visibilitychange',function(){ document.hidden?stop():play(); });
-
- show(0); play();
-})();
-/*Aquí termina el código del fade*/
-
-
-/*elementos en vista móvil*/
-
-/* ===== Año del pie de página ===== */
+/* del pie de página */
 (function(){
   var a=document.getElementById('anio');
   if(a) a.textContent=new Date().getFullYear();
 })();
 
-/* ===== Fotos que se desvanecen ===== */
+/* Fade */
 (function(){
   var box=document.querySelector('.fade'); if(!box) return;
   var slides=box.querySelectorAll('.fade-slide'), n=slides.length, idx=0, timer=null;
@@ -38,7 +12,7 @@
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var MS=5000; /* segundos que se queda cada foto: 5000 = 5 s */
 
-  /* Los puntos son opcionales: si borras <div class="fade-dots"></div> del HTML, no se crean */
+  /* puntos de navegación del fade */
   if(dots){
     for(var i=0;i<n;i++){
       (function(i){
@@ -63,7 +37,7 @@
   show(0); play();
 })();
 
-/* ===== Galería de servicios ===== */
+/* Galería de servicios cards */
 /* Computadora: pasar el mouse (CSS) o hacer clic. Celular: con solo tocar o deslizar el dedo sobre una tarjeta, se abre. */
 (function(){
   var cards=document.querySelectorAll('.gal-card');
