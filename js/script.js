@@ -4,7 +4,7 @@
  var box=document.querySelector('.fade'); if(!box) return;
  var slides=box.querySelectorAll('.fade-slide'), n=slides.length, idx=0, timer=null;
  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
- var MS=5000; /* tiempo que se queda cada foto: 5000 = 5 segundos */
+ var MS=5000; /* tiempo que se queda cada foto 5 segundos */
 
  function show(i){
   slides[idx].classList.remove('on');
