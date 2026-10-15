@@ -388,6 +388,28 @@ header{
     outline-offset:3px;
 }
 
+.lb{width:min(940px,94vw);max-height:92vh;padding:0;border:1px solid var(--gold);border-radius:12px;background:#14110a;color:var(--text);overflow:auto}
+.lb::backdrop{background:rgba(0,0,0,.82)}
+.lb-close{position:absolute;top:10px;right:10px;z-index:2;width:40px;height:40px;border-radius:50%;border:1px solid var(--gold);background:#0A0A0Acc;color:var(--gold);font-size:24px;line-height:1;cursor:pointer}
+.lb-body{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr)}
+.lb-main,.lb-info{min-width:0}
+.lb-stage{position:relative;aspect-ratio:4/3;background:#000}
+.lb-img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:1px solid var(--gold);background:#0A0A0Acc;color:var(--gold);font-size:24px;line-height:1;cursor:pointer}
+.lb-prev{left:10px}
+.lb-next{right:10px}
+.lb-thumbs{display:flex;gap:8px;padding:10px;overflow-x:auto;background:#0d0d0d}
+.lb-thumb{flex:none;width:64px;height:64px;padding:0;border:2px solid transparent;border-radius:6px;overflow:hidden;cursor:pointer;background:none;opacity:.6}
+.lb-thumb[aria-current="true"]{border-color:var(--gold);opacity:1}
+.lb-thumb img{display:block;width:100%;height:100%;object-fit:cover}
+.lb-info{padding:26px 22px;display:flex;flex-direction:column;gap:12px}
+.lb-info h3{font-size:26px;color:var(--gold)}
+.lb-desc{margin:0;line-height:1.6;color:var(--muted)}
+.lb-list{margin:0;padding:0;list-style:none}
+.lb-list li{padding:8px 0;border-top:1px solid #D4AF3733}
+.lb-info .btn{align-self:flex-start;margin-top:6px; text-align: center;}
+.lb button:focus-visible,.lb a:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
+
 @media (hover:hover){
     .gal-card:hover .gal-over{
         opacity:1;
@@ -424,17 +446,25 @@ footer{
   .gal-grid{grid-template-columns:repeat(3,1fr)}
 }
 @media (max-width:720px){
-  .hero,.btl-grid, .gal-grid{grid-template-columns:1fr;}
-  .foto,.fade{aspect-ratio:4/3}
+  .hero,.btl-grid, .gal-grid{
+    grid-template-columns:1fr;
+  .lb-body{grid-template-columns:minmax(0,1fr)}
+}
+
+  .foto,.fade{
+    aspect-ratio:4/3;
+}
+  .lb-body{
+    grid-template-columns:1fr;
+}
+
+  .lb-info{
+    padding:18px;
+}
+
 }
 @media (prefers-reduced-motion:reduce){
   .fade-slide{transition:none}
 }
 
 /* Powered by OnixCorp */
-/*
-parallax fotos
-demostradoras foto de demostradora
-Edecanes
-
-*/

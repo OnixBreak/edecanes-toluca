@@ -85,37 +85,46 @@
       <h2>Elige el servicio que necesitas</h2>
       <p class="gal-hint">Toca o pasa el mouse sobre una foto para ver qué incluye.</p>
       <div class="gal-grid">
-        <button class="gal-card" type="button" aria-expanded="false">
+
+        <!--Edecanes-->
+        <button class="gal-card" type="button" aria-expanded="false" data-carpeta="img/gal/edecanes" data-desc="Imagen cuidada para recibir, orientar y representar a tu marca en el evento.">
           <img src="img/gal/edecanes/edecanes.png" alt="" loading="lazy" onerror="this.remove()">
           <span class="gal-name">Edecanes</span>
           <span class="gal-over"><strong>Edecanes</strong><ul><li>Recepción y registro</li><li>Stands y exhibiciones</li><li>Eventos corporativos</li></ul></span>
         </button>
-        <button class="gal-card" type="button" aria-expanded="false">
+
+        <!--Demostradoras-->
+        <button class="gal-card" type="button" aria-expanded="false" data-carpeta="img/gal/demostradoras" data-desc="Demostración de producto">
           <img src="img/gal/demostradoras/demostradoras.jpeg" alt="" loading="lazy" onerror="this.remove()">
           <span class="gal-name">Demostradoras</span>
           <span class="gal-over"><strong>Demostradoras</strong><ul><li>Degustaciones</li><li>Demostración de producto</li><li>Punto de venta</li></ul></span>
         </button>
-        <button class="gal-card" type="button" aria-expanded="false">
+
+        <!--Publiandantes-->
+        <button class="gal-card" type="button" aria-expanded="false" data-carpeta="img/gal/publiandantes" data-desc="Letreros y pancartas ambulantes">
           <img src="img/gal/publiandantes/publiandantes.jpeg" alt="" loading="lazy" onerror="this.remove()">
           <span class="gal-name">Publiandantes</span>
           <span class="gal-over"><strong>Publiandantes</strong><ul><li>Letreros y pancartas ambulantes</li><li>Zonas de alto tránsito</li><li>Presencia de marca a pie</li></ul></span>
         </button>
-        <button class="gal-card" type="button" aria-expanded="false">
+
+        <!--Perifoneo-->
+        <button class="gal-card" type="button" aria-expanded="false" data-carpeta="img/gal/perifoneo" data-desc="Recorridos por colonias y calles">
           <img src="img/gal/perifoneo/perifoneo.jpeg" alt="" loading="lazy" onerror="this.remove()">
           <span class="gal-name">Perifoneo</span>
           <span class="gal-over"><strong>Perifoneo</strong><ul><li>Recorridos por colonias y calles</li><li>Spots grabados o voz en vivo</li><li>Anuncio de ofertas y eventos</li></ul></span>
         </button>
         
-        <button class="gal-card" type="button" aria-expanded="false">
+        <!--Congresos y ferias-->
+        <button class="gal-card" type="button" aria-expanded="false" data-carpeta="img/gal/congresos y ferias" data-desc="Zanqueros">
           <img src="img/gal/congresos y ferias/congresos.jpg" alt="" loading="lazy" onerror="this.remove()">
           <span class="gal-name">Congresos y ferias</span>
           <span class="gal-over"><strong>Congresos y ferias</strong><ul><li>Acomodo de invitados</li><li>Acreditaciones</li><li>Apoyo logístico</li></ul></span>
         </button>
         
-        <button class="gal-card" type="button" aria-expanded="false">
-          <img src="img/logo.jpeg" alt="" loading="lazy" onerror="this.remove()">
+        <button class="gal-card" type="button" aria-expanded="false" data-carpeta="img/gal/extras" data-desc="lo necesario para tu evento">
+          <img src="img/gal/extras/extras.jpg" alt="" loading="lazy" onerror="this.remove()">
           <span class="gal-name">Servicios Extra</span>
-          <span class="gal-over"><strong>Servicios Extra</strong><ul><li>Sky-Dancer</li><li>Audio</li><li>carpa</li><li>Spot Publicitario</li></ul></span>
+          <span class="gal-over"><strong>Servicios Extra</strong><ul><li>Cámara 360</li><li>Sky-Dancer</li><li>Audio</li><li>carpa</li><li>Spot Publicitario</li></ul></span>
         </button>
       </div>
     </div>
@@ -130,6 +139,27 @@
 <footer>
   <div class="wrap">© <span id="anio"></span> Diamante BTL · powered by OnixCorp</div>
 </footer>
+<dialog class="lb" id="lb" aria-labelledby="lb-title">
+  <button class="lb-close" type="button" aria-label="Cerrar">&times;</button>
+  <div class="lb-body">
+    <div class="lb-main">
+      <div class="lb-stage">
+        <img class="lb-img" src="" alt="">
+        <button class="lb-nav lb-prev" type="button" aria-label="Foto anterior">&#8249;</button>
+        <button class="lb-nav lb-next" type="button" aria-label="Foto siguiente">&#8250;</button>
+      </div>
+      <div class="lb-thumbs"></div>
+    </div>
+    <div class="lb-info">
+      <h3 id="lb-title"></h3>
+      <p class="lb-desc"></p>
+      <ul class="lb-list"></ul>
+      <a class="btn p" href="#" target="_blank" rel="noopener">Cotizar este servicio</a>
+    </div>
+  </div>
+</dialog>
+
+
 
 <script src="js/script.js"></script>
 </body>
