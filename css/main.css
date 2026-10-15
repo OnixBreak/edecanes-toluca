@@ -94,7 +94,7 @@ header{
     color:var(--muted);
 }
 .foto{
-    width:100%;
+    width:90%;
     aspect-ratio:5/5;
     object-fit:fill;
     border:1px solid var(--gold);
@@ -436,16 +436,4 @@ parallax fotos
 demostradoras foto de demostradora
 Edecanes
 
- 
-promotoras X
-SERVICIOS EXTRAS
-  - skydancers
-  - carpa
-  - audio
-  - spot publicitario
-  - cabina 360
-
-tarjeta perifoneo
-
-partir logo y acomodarlo
 */
