@@ -279,13 +279,12 @@ header{
     border-block:1px solid #D4AF3733;
 }
 
-.rv-video{
-  position:fixed;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center top;
+.rv-img{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100%;
+    background:var(--ink) url("../img/window.png") center/cover no-repeat;
 }
 
 
